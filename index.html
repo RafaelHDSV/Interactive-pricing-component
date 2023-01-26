@@ -83,7 +83,7 @@
       align-items: center;
       background-color: var(--white);
       padding: 3rem;
-      gap: 2rem;
+      gap: 3rem;
       border-radius: .5rem;
       box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, .5);
 
@@ -102,7 +102,7 @@
     .numbers p:nth-child(1) {
       text-transform: uppercase;
       color: var(--grayish_blue);
-      font-weight: 600;
+      font-weight: 800;
       font-size: 15px;
     }
 
@@ -110,7 +110,6 @@
       display: flex;
       align-items: center;
       color: var(--grayish_blue);
-      font-weight: 600;
       font-size: 15px;
     }
 
@@ -142,6 +141,7 @@
       background-position: center;
       background-size: 60%;
       cursor: pointer;
+      box-shadow: 0px 10px 7px 0px var(--soft_cyan);
     }
 
     .options_billing {
@@ -210,6 +210,10 @@
       transform: translateX(25px);
     }
 
+    .options_billing p em {
+      /* PAREI AQUI TIRAR ITALICO E DEIXAR LARANJA E AFINS TLG NE PAI */
+    }
+
     /* .attribution {
       font-size: 11px;
       text-align: center;
@@ -229,8 +233,8 @@
 
   <main>
     <div class="numbers">
-      <p>0K Pageviews</p>
-      <p><strong>$0.00</strong> / month</p>
+      <p>100K Pageviews</p>
+      <p><strong>$16.00</strong> / month</p>
     </div>
 
     <input type="range" name="range" id="range" min="0" max="100" oninput="rangeColor()">
@@ -241,11 +245,9 @@
       <input id="switch-shadow_1 uppercase" class="switch switch--shadow" type="checkbox">
       <label for="switch-shadow_1 uppercase"></label>
 
-      <p>Yearly Billing</p>
+      <p>Yearly Billing <em>25% discount</em></p>
     </div>
   </main>
-
-  <!--25% discount -->
 
   <!-- Unlimited websites -->
   <!-- 100% data ownership -->
