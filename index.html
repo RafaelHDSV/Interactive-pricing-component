@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Rafael Henrique de Sousa Vieira">
+  <meta name="keywords"
+    content="programação, html, css, frontend mentor, Interactive pricing component, Rafael Henrique de Sousa Vieira, Frontend, Front, end">
+  <meta name="robots" content="index, follow">
+  <meta name="description"
+    content="In this project, you'll build out an interactive pricing component complete with custom range input slider and pricing toggle. A perfect way to test your JS skills!">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Interactive pricing component</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+    /* font-family: 'Manrope', sans-serif; */
+
+    :root {
+      --soft_cyan: hsl(174, 77%, 80%);
+      --strong_cyan: hsl(174, 86%, 45%);
+      --light_grayish_red: hsl(14, 92%, 95%);
+      --light_red: hsl(15, 100%, 70%);
+      --pale_blue: hsl(226, 100%, 87%);
+
+      --white: hsl(0, 0%, 100%);
+      --very_pale_blue: hsl(230, 100%, 99%);
+      --light_grayish_blue: hsl(224, 65%, 95%);
+      --light_grayish_blue_2: hsl(223, 50%, 87%);
+      --grayish_blue: hsl(225, 20%, 60%);
+      --dark_desaturated_blue: hsl(227, 35%, 25%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      min-height: 100vh;
+      background-color: var(--very_pale_blue);
+      background: url('images/bg-pattern.svg') no-repeat;
+      background-size: 100% 50%;
+      gap: 3rem;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url('images/pattern-circles.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      padding: 3rem 0;
+      gap: 1rem;
+    }
+
+    header h1 {
+      font-weight: 800;
+      color: var(--dark_desaturated_blue);
+    }
+
+    header p {
+      color: var(--grayish_blue);
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--white);
+      padding: 3rem;
+      gap: 2rem;
+      border-radius: .5rem;
+      box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, .5);
+
+      /* CORRIGIR */
+      width: 35rem;
+    }
+
+    .numbers {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .numbers p:nth-child(1) {
+      text-transform: uppercase;
+      color: var(--grayish_blue);
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .numbers p:nth-child(2) {
+      display: flex;
+      align-items: center;
+      color: var(--grayish_blue);
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .numbers p strong {
+      font-weight: 800;
+      font-size: 40px;
+      color: var(--dark_desaturated_blue);
+      padding: 0 .5rem 0 0;
+    }
+
+    #range {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: .5rem;
+      background: var(--light_grayish_blue);
+      border-radius: .5rem;
+    }
+
+    #range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background-color: var(--strong_cyan);
+      background-image: url('images/icon-slider.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 70%;
+      cursor: grab;
+    }
+
+    /* .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    } */
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Simple, traffic-based pricing</h1>
+    <p>Sign-up for our 30-day trial. No credit card required.</p>
+  </header>
+
+  <main>
+    <div class="numbers">
+      <p>0K Pageviews</p>
+      <p><strong>$0.00</strong> / month</p>
+    </div>
+
+    <input type="range" name="range" id="range" min="0" max="100" oninput="rangeColor()">
+
+    <div class="options_billing">
+      <p>Monthly Billing</p>
+      <input type="checkbox" name="" id="">
+      <p>Yearly Billing 25% discount</p>
+    </div>
+  </main>
+
+
+  <!-- Pageviews -->
+  <!-- $ /month -->
+
+  <!-- Monthly Billing -->
+  <!-- Yearly Billing 25% discount -->
+
+  <!-- Unlimited websites -->
+  <!-- 100% data ownership -->
+  <!-- Email reports -->
+
+  <!-- Start my trial -->
+
+  <!-- <footer class="attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>
+    <p>Coded by <a href="https://github.com/RafaelHDSV" target="_blank">Rafael Henrique de Sousa Vieira</a>.</p>
+  </footer> -->
+
+  <script>
+    let rangeInput = document.getElementById('range')
+
+    function rangeColor() {
+      valuePercent = (rangeInput.value / rangeInput.max) * 100;
+      rangeInput.style.background =
+        `linear-gradient(to right, var(--soft_cyan) ${valuePercent}%, var(--light_grayish_blue) ${valuePercent}%)`;
+    }
+
+    rangeColor()
+  </script>
+</body>
+
+</html>
