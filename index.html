@@ -140,6 +140,15 @@
       background-size: 60%;
       cursor: pointer;
       box-shadow: 0px 10px 7px 0px var(--soft_cyan);
+      transition: .5s all ease;
+    }
+
+    #range::-webkit-slider-thumb:hover {
+      background-color: var(--soft_cyan);
+    }
+
+    #range::-webkit-slider-thumb:focus {
+      opacity: 0;
     }
 
     .options_billing {
@@ -157,6 +166,10 @@
       visibility: hidden;
       position: absolute;
       margin-left: -9999px;
+    }
+
+    .switch--shadow+label:hover:before {
+      background-color: var(--soft_cyan);
     }
 
     .switch+label {
@@ -224,8 +237,7 @@
       outline: 0;
       border: none;
       background-color: var(--light_grayish_blue);
-      max-width: 35rem;
-      width: 100%;
+      width: 35rem;
       height: 1px;
     }
 
@@ -254,6 +266,22 @@
     .infos_start div p {
       font-size: 13px;
       color: var(--grayish_blue);
+    }
+
+    .start_trial button {
+      outline: 0;
+      border: none;
+      padding: .8rem 3rem;
+      border-radius: 3rem;
+      background-color: var(--dark_desaturated_blue);
+      color: var(--light_grayish_blue_2);
+      cursor: pointer;
+      transition: .5s all ease;
+    }
+
+    .start_trial button:hover {
+      transform: scale(1.1);
+      color: var(--white);
     }
 
     /* .attribution {
