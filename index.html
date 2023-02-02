@@ -147,10 +147,6 @@
       background-color: var(--soft_cyan);
     }
 
-    #range::-webkit-slider-thumb:focus {
-      opacity: 0;
-    }
-
     .options_billing {
       display: flex;
       flex-direction: row;
@@ -303,11 +299,11 @@
 
   <main>
     <div class="numbers">
-      <p>100K Pageviews</p>
+      <p id="pageviews">100K Pageviews</p>
       <p><strong>$16.00</strong> / month</p>
     </div>
 
-    <input type="range" name="range" id="range" min="0" max="100" oninput="rangeColor()">
+    <input type="range" name="range" id="range" min="10000" max="1000000" oninput="rangeColor()">
 
     <div class="options_billing">
       <p>Monthly Billing</p>
@@ -349,6 +345,17 @@
 
   <script>
     let rangeInput = document.getElementById('range')
+    let pageviews = document.getElementById('pageviews')
+    let rangeFormated = 0
+
+    rangeInput.addEventListener('input', () => {
+      if (rangeInput.value > 1000) {
+        rangeFormated = `${rangeInput.value / 1000}K`
+      }
+      console.log(rangeFormated);
+
+      pageviews.innerHTML = `${rangeFormated} Pageviews`
+    })
 
     function rangeColor() {
       valuePercent = (rangeInput.value / rangeInput.max) * 100;
