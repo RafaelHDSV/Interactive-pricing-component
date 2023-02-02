@@ -86,8 +86,6 @@
       gap: 3rem;
       border-radius: .5rem;
       box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, .5);
-
-      /* CORRIGIR */
       width: 35rem;
     }
 
@@ -222,6 +220,23 @@
       font-weight: 800;
     }
 
+    hr {
+      outline: 0;
+      border: none;
+      background-color: var(--light_grayish_blue);
+      max-width: 35rem;
+      width: 100%;
+      height: 1px;
+    }
+
+    .start_trial {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
     /* .attribution {
       font-size: 11px;
       text-align: center;
@@ -256,20 +271,29 @@
       <p>Yearly Billing <em>25% discount</em></p>
     </div>
 
+    <hr>
+
     <div class="start_trial">
       <div class="infos_start">
+        <div>
+          <img src="images/icon-check.svg" alt="icon-check.svg">
+          <p>Unlimited websites</p>
+        </div>
 
+        <div>
+          <img src="images/icon-check.svg" alt="icon-check.svg">
+          <p>100% data ownership</p>
+        </div>
+
+        <div>
+          <img src="images/icon-check.svg" alt="icon-check.svg">
+          <p>Email reports</p>
+        </div>
       </div>
 
-      <button></button>
+      <button>Start my trial</button>
     </div>
   </main>
-
-  <!-- Unlimited websites -->
-  <!-- 100% data ownership -->
-  <!-- Email reports -->
-
-  <!-- Start my trial -->
 
   <!-- <footer class="attribution">
     <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>
