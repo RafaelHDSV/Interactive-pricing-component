@@ -300,10 +300,10 @@
   <main>
     <div class="numbers">
       <p id="pageviews">100K Pageviews</p>
-      <p><strong>$16.00</strong> / month</p>
+      <p id="amount_views"><strong>$16.00</strong> / month</p>
     </div>
 
-    <input type="range" name="range" id="range" min="10000" max="1000000" oninput="rangeColor()">
+    <input type="range" name="range" id="range" min="1" max="5" oninput="rangeColor()">
 
     <div class="options_billing">
       <p>Monthly Billing</p>
@@ -346,15 +346,45 @@
   <script>
     let rangeInput = document.getElementById('range')
     let pageviews = document.getElementById('pageviews')
+    let amountViewsInput = document.getElementById('amount_views')
+    let switchInput = document.querySelector('.switch')
     let rangeFormated = 0
+    let amountViews = 0
 
     rangeInput.addEventListener('input', () => {
-      if (rangeInput.value > 1000) {
-        rangeFormated = `${rangeInput.value / 1000}K`
+      if (rangeInput.value == 1) {
+        rangeFormated = '10K'
+        amountViews = 8
       }
-      console.log(rangeFormated);
+      if (rangeInput.value == 2) {
+        rangeFormated = '50K'
+        amountViews = 12
+      }
+      if (rangeInput.value == 3) {
+        rangeFormated = '100K'
+        amountViews = 16
+      }
+      if (rangeInput.value == 4) {
+        rangeFormated = '500K'
+        amountViews = 24
+      }
+      if (rangeInput.value == 5) {
+        rangeFormated = '1M'
+        amountViews = 36
+      }
 
-      pageviews.innerHTML = `${rangeFormated} Pageviews`
+      setInterval(() => {
+        if (switchInput.checked) {
+          amountViews = amountViews - ((25 * amountViews) / 100)
+          clearInterval
+
+          pageviews.innerHTML = `${rangeFormated} Pageviews`
+          amountViewsInput.innerHTML = `<strong>$${amountViews.toFixed(2)}</strong> / month`
+        } else {
+          pageviews.innerHTML = `${rangeFormated} Pageviews`
+          amountViewsInput.innerHTML = `<strong>$${amountViews.toFixed(2)}</strong> / month`
+        }
+      }, 1000)
     })
 
     function rangeColor() {
