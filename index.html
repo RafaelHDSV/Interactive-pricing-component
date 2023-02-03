@@ -373,18 +373,15 @@
         amountViews = 36
       }
 
-      setInterval(() => {
-        if (switchInput.checked) {
-          amountViews = amountViews - ((25 * amountViews) / 100)
-          clearInterval
+      if (switchInput.checked) {
+        amountViews = amountViews - ((25 * amountViews) / 100)
 
-          pageviews.innerHTML = `${rangeFormated} Pageviews`
-          amountViewsInput.innerHTML = `<strong>$${amountViews.toFixed(2)}</strong> / month`
-        } else {
-          pageviews.innerHTML = `${rangeFormated} Pageviews`
-          amountViewsInput.innerHTML = `<strong>$${amountViews.toFixed(2)}</strong> / month`
-        }
-      }, 1000)
+        pageviews.innerHTML = `${rangeFormated} Pageviews`
+        amountViewsInput.innerHTML = `<strong>$${amountViews.toFixed(2)}</strong> / month`
+      } else {
+        pageviews.innerHTML = `${rangeFormated} Pageviews`
+        amountViewsInput.innerHTML = `<strong>$${amountViews.toFixed(2)}</strong> / month`
+      }
     })
 
     function rangeColor() {
