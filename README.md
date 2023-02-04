@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: URL SOLUTION HERE
+- Solution URL: https://www.frontendmentor.io/solutions/interactive-pricing-component-html-css-javascript-FkZlJAIIzU
 - Live Site URL: https://interactive-pricing-component-rafael.netlify.app
 
 ### Screenshot
