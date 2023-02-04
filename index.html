@@ -282,14 +282,25 @@
       color: var(--white);
     }
 
-    /* .attribution {
-      font-size: 11px;
+    .attribution {
+      font-size: 10px;
       text-align: center;
     }
 
     .attribution a {
-      color: hsl(228, 45%, 44%);
-    } */
+      text-decoration: none;
+      color: var(--strong_cyan);
+      cursor: pointer;
+      transition: .5s all ease;
+    }
+
+    .attribution a:hover {
+      font-size: 22px;
+    }
+
+    @media screen and (max-width: 575px){
+      
+    }
   </style>
 </head>
 
@@ -340,10 +351,10 @@
     </div>
   </main>
 
-  <!-- <footer class="attribution">
+  <footer class="attribution">
     <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>
     <p>Coded by <a href="https://github.com/RafaelHDSV" target="_blank">Rafael Henrique de Sousa Vieira</a>.</p>
-  </footer> -->
+  </footer>
 
   <script>
     let rangeInput = document.getElementById('range')
